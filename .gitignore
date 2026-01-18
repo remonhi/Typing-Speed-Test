@@ -1,0 +1,126 @@
+# --- OS Specific ---
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+
+# Raspberry Pi OS (Linux cruft)
+*.swp
+*.swo
+*.bak
+*.tmp
+*~
+*.lock
+lost+found/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info/
+*.manifest
+*.spec
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.log
+
+# Unit test / coverage reports
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# --- Flask ---
+instance/
+*.db
+*.sqlite
+*.sqlite3
+
+# --- SQL Lite ---
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
+# --- PostgreSQL ---
+*.pgsql
+*.psql
+*.pgdata
+pgdata/
+pg_log/
+
+# --- Render.com ---
+# Render often uses environment files and build artifacts
+render.yaml
+render-build.sh
+render-start.sh
+*.render-cache/
+*.render-log/
+
+# --- Heroku ---
+# Heroku build artifacts and local config
+*.orig
+*.rej
+*.log
+*.bak
+*.tmp
+*.swp
+*.swo
+*.pid
+*.seed
+*.pid.lock
+.heroku/
+.herokuignore
+
+# --- Gunicorn ---
+gunicorn.conf.py
+gunicorn.log
+*.pid
+
+# --- IDEs & Editors ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# --- Other Secrets ---
+*.env
+*.secret
+*.key
+*.pem
