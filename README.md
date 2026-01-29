@@ -52,7 +52,7 @@ If you have more time, you can build your typing speed test into a typing traine
             - Data Entry/Transcription: 80-100+ WPM (high volume, high accuracy needed).
             - 911 Operator: 80-85 WPM (critical speed/accuracy).
 
-1/19/25, More Research
+1/19/25, More Research 
 
     1. Come up with apporoach (using an API) for obtaining text for testing. ✅
         a. Okay, going with Gutenberg
@@ -71,7 +71,14 @@ If you have more time, you can build your typing speed test into a typing traine
         a. Go look at ScoreBoard for Snake game ✔️
             i. This was just manage the tracking the score and managing the "Turtle" 🐢
             ii. Thus, this is useless. 🙁
-        b. Regroup again.
+        
+        b. Again, "life," computer problems, etc.
+            i. Yes, my PC is virtually useless...thought I had it fixed and decided it was time to move on (without loosing data) 🙁
+            ii. Yet, the coding most go on to decided to move back to my Raspberry Pi for development until my PC is fixed 🙁
+            iii. First, I reconnected my Raspberry Pi to network and worked on getting the latest updates to it. ⬅️
+            iv. Second, confirmed everything workign with current code. 
+        
+        c. Regroup again.
             i. Draw on paper how I want it to look. 🗒️
             ii. Figure out how to make these distint areas
                 - Overall application window → win_app
@@ -106,6 +113,9 @@ If you have more time, you can build your typing speed test into a typing traine
         a. Start the test.
         b. Analzye the test.
         c. Report back to test subject.
+
+
+
 
 TBD, Wraping Up
 
