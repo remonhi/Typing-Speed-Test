@@ -71,6 +71,12 @@ If you have more time, you can build your typing speed test into a typing traine
         a. Go look at ScoreBoard for Snake game ✔️
             i. This was just manage the tracking the score and managing the "Turtle" 🐢
             ii. Thus, this is useless. 🙁
+        
+        b. Again, "life," computer problems, etc.
+            i. Yes, my PC is virtually useless...thought I had it fixed and decided it was time to move on (without loosing data) 🙁
+            ii. Yet, the coding most go on to decided to move back to my Raspberry Pi for development until my PC is fixed 🙁
+            iii. First, I reconnected my Raspberry Pi to network and worked on getting the latest updates to it. ⬅️
+            iv. Second, confirmed everything workign with current code. 
         b. Again, "life," computer problems, etc.
             i. Yes, my PC is virtually useless...thought I had it fixed and decided it was time to move on (without loosing data) 
             ii. Yet, the coding most go on to decided to move back to my Raspberry Pi for development until my PC is fixed
