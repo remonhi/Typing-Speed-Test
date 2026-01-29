@@ -14,122 +14,104 @@ If you have more time, you can build your typing speed test into a typing traine
 
 ## My Notes
 
-1/19/26-, Getting Organized
+1/18/26, Getting Organized
 
     Copied over from previous project → cp -R 'Day 85' 'Day 86' ✔️
     Removed old virtual environment → rm -rf venv ✔️
     Removed the old git tracking → rm -rf .git ✔️
     Initialized the virtual environment → python -m venv venv ✔️
     Activated the virtual environemtn → source venv/bin/activate ✔️
-    Initlaized a new repo →
+    Initlaized a new repo → ✔️
         git init
         git add .
         git commit -m "initial commit"
-    Noted old Git Ignore still there → cat .gitignore
-    Set branch name → git branch -M main
-    Created new repo at Gig Hub → https://github.com/remonhi/Text-to-Morse-Code-Converter
-    Connected to net repo → git remote add origin git@github.com:remonhi/Text-to-Morse-Code-Converter.git
-    Pushed → git push -u origin main
+    Noted old Git Ignore still there → cat .gitignore ✔️
+    Set branch name → git branch -M main ✔️
+    Created new repo at Gig Hub → https://github.com/remonhi/Typing-Speed-Test ✔️
+    Connected to net repo → git remote add origin git@github.com:remonhi/Typing-Speed-Test.git ✔️
 
 
+    1. Check out provided example at https://typing-speed-test.aoeu.eu/ ✅
+        a. Learned about
+            i. Corrected Characters Per Minute (CPM)
+            ii. Words Per Minute (CPM)
+            iii. Raw versus Corrected
+        b. Like the idea of real time feedback, and also a timed test.
+        c. Last, an option to restar the test
+
+    2. Research the topic of typing test (from the old days) ✅
+        a. Words Per Minute (WPM) - dividing the total characters tyhped by 5 (a word) and test duratiaon adjusted for errors.
+        b. Accuracy - ( Correct Characters / Total Characters ) * 100%
+        c. Test Format - Involve typing passages of text (not random words)
+        d. Standards/Benchmarks
+
+            - Learning < 30
+            - General Office/Admin: 40-60 WPM (e.g., handling emails, notes).
+            - Customer Support/Management: 60-80 WPM (for efficient communication).
+            - Content Writing/Marketing: 70-90 WPM (for longer content).
+            - Data Entry/Transcription: 80-100+ WPM (high volume, high accuracy needed).
+            - 911 Operator: 80-85 WPM (critical speed/accuracy).
+
+1/19/25, More Research
+
+    1. Come up with apporoach (using an API) for obtaining text for testing. ✅
+        a. Okay, going with Gutenberg
+        b. Pick out a random exerpt
+        c. Clean up the "try" for the request
+        d. Test it a little bit
+
+    2. Regrouped here. ✅
+        a. Had to stop in middle of all this to deal with a network issue.
+        b. Then, made plans for next day.
+
+1/21/25-, Understanding Tkinter
+
+    1. Setup the windows (game board)...
+
+        a. Go look at ScoreBoard for Snake game ✔️
+            i. This was just manage the tracking the score and managing the "Turtle" 🐢
+            ii. Thus, this is useless. 🙁
+        b. Regroup again.
+            i. Draw on paper how I want it to look. 🗒️
+            ii. Figure out how to make these distint areas
+                - Overall application window → win_app
+                - Statistics/Score window → win_stats
+                - Test content window → win_content
+                - Feedback (what user is doing) window → win_feedback
 
 
+                    ~ Yes, tried to do this without AI 🤖
+                    ~ Found tutorial at https://docs.python.org/3/library/tkinter.html 🚌
+                    ~ Okay, that docuemntation sucks so started over with some prevous code 👎🏾
+                    ~ Figured out that creating Frames was solution to sections 😁
+                    ~ Test with statistics frame making it have the window be the "border" ✔️
+                    ~ Move the logic and formatting to the other frames
+                    ~ Don't forget to make the root window stretch to widegets
+                    ~ Also, don't forget to add the title to the root window
+                    ~ Before parking this, put buttons in the control frame
+                        1. Start
+                        2. Stop
+                        3. Reset
+                        4. Exit
 
+    3. Make sure to address scoring based on the number of error (Corrected CPM).
+        a. Instead of computer solution, search Internet to get equations for CPM, WPM and accuracy
+        b. Then, stand back for the moment
 
+    2. Experiment with reading from keyboard.
+        a. First, just reading the keybooard
+        b. Then, evaluate if any speed options (might be an Internet search)
 
+    7. Reevaluate plans on how to...
+        a. Start the test.
+        b. Analzye the test.
+        c. Report back to test subject.
 
+TBD, Wraping Up
 
+    3. Clean up (and test) the code.
 
-
-
-
-
-    Copied over Git Ignore → cp ../'Day 84'/.gitignore .
-
-Getting Organized
-
-Okay, I just took this day to start getting organized. Having not used Tkinter in a while I decided to go back to Day 20 to look at teh projects there. I decided to refresh on my code for the 'Snake Game.' Also, it is using OOP that is great. So for today, I just copied all the code over and laid out plans for tomorrow.
-
-    Initialized the virtual environment → python -m venv venv
-        Activated the virtual environemtn → source venv/bin/activate
-        Initlaized a new repo →
-            git init
-            git add .
-            git commit -m "initial commit"
-        Set branch name → git branch -M main
-        Created new repo at Gig Hub → https://github.com/remonhi/Image-Watermarking-Desktop-App
-        Connected to net repo → git remote add origin git@github.com:remonhi/Image-Watermarking-Desktop-App.git
-        Pushed → git push -u origin main
-
-    ...then, turned out the code I wanted use was a different module - 158.py. Thas had a module just for one class, so moved it into the "main."
-
-        1. Moved Food() class ✔️
-        2. Broke Snake() class 🥺
-        3. Noted that ScoreBoard() class still needs to be moved 😐
-
-1/7/26, Chasing Squirel
-
-    1. Recover the Snake() and make it work.✅
-    2. Move the ScoreBoard() class and make it work in same file...created lib.py. ✅
-    3. Get rid of var.py refernce. ✅
-    4. Get file cleaned up to match my CONVENTIONS.✅
-    5. Figure out everything in program works.✅
-    6. Review the service https://watermarkly.com/ - Hmmm, very nice...so why am I doing this. ✅
-    7. Study https://pypi.org/project/Pillow/, https://docs.python.org/3/library/tkinter.html and little Googling. ✅
-        a. Ran through the basic installation.
-        b. Used the tutorial to get familar with the library
-        c. Wow, converting files is simply changing the extention.
-        d. Yeah, more than 90 minutes going through tutorial but gave me a lot understanding and ideas
-        e. 'Image Enhancement' seems to be what this is all about...
-            i. First, went down a rabbit hole for how to display image (had to use Tkinter)
-            ii. PICK BACK UP AT 'Image Enhancement'
-
-1/16/26, Regrouping Work & expereimenting
-
-As the cliche goes, "life happens" but back on this now...
-
-    1. Setup the "GUI Enviroment" with Tkinter ✅
-
-    2. Read in file to be processed from command line (give it an FTP style...from and to) ✅
-        a. If no arguemnts, have a default (find the Xolo dog).
-        b. If something wrong with arguement, let the user know.
-
-    3. Display the input file. ✅
-        a. Using Tkinter documentation, it worked the first time.
-        b. Yet, kept displaying a bottom of screen.
-        c. Then, got centered but image cut off
-        d. Search the "inter web" for solution and it was .geometry() method
-        e. This was a "rabbit hole" but better to fix now than later.
-
-    4. Create the output file. ✅
-        a. First, just test the creation...going back to Pillow docuentation at https://pypi.org/project/Pillow/ ✔️
-        b. Decided to use black and white as test.  ✔️
-        c. Went down another rabbit hole to diplay both images at same time. ✔️
-
-    5. Upgrade Python ✅
-        a. Went down rabbit hole to upgrade version of Python 🐰
-        b. Was running version 3.13.3 🐍
-        c. The lastest is 3.14.2 from December 5, 2025 🗓️
-        d. Downloaded and stalled via PKG 🍎
-        e. Had to take a few more steps to get it working (rebuilding virtual environment). 👍🏾
-        f. Saved the requirements.txt 💿
-
-1/18/26, Finally getting this done
-
-I have been trying to balance "life," today decided to wrp this up today...
-
-    1. Process watermark ✅
-        a. Come up with a generic graphic for the watemark. ✔️
-        b. Place the watermark in bottom left corner. ✔️
-        c. Use 'Lorem Ipsum' for text to display after image. ❌
-
-    2. Don't get fancy here ✅
-        a. Yes, for now just trying to figure this out.
-        b. Later, can get fancy with my "real world" programs.
-
-    3. Clean up (and test) the code. ✅
-
-    2. Create a requirements.txt file ✅
+    2. Create a requirements.txt file
 
     3. Push to Git Hub
 
@@ -138,3 +120,15 @@ I have been trying to balance "life," today decided to wrp this up today...
         a. Layout top line approach
         b. Note lesson learned
         c. Share code via Git Hub
+
+Whew, this lesson here was just is becoming evident with all these projects. First, I have to reserach to get familiar with topic. Most of these projects are not something new, but have established CONVENTIONS. Yet, the research can be a little overwhelming and in someways feels like slowing down process. In the end, the research allows for comining up with strategy. The initial startegy is a "what is computers did not exist" approach. Then, start to figure out how to make the computer do these things. Last, have to make it pretty. Second, I am still finding myself very curious about using Tkinter and thus find myself taking more time than necessary. At highlevel, my appraoch was...
+
+1. Understand the requirements
+2. Look at examples.
+3. Reserach history of typing tests
+4. Decide on layout
+5. Refresh Tkinter knowledge
+6. Build out the "layout" with Tkinter windows, frames, and buttons
+7. Looked for equations to evaluate WPM, CPM and
+
+...BTW, I tried very hard to avoid using an LMM and that meant quiclly scrolling down the page after a Google search. In many cases, the original documentation was horrible but found good exmamples. In the end, the joy was seeing an idea slowly come to life. You start off saying, "I don't know how to do that." Then, from brainstorming, experiment, and just "doing the work" it all comes together.
