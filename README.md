@@ -72,15 +72,15 @@ If you have more time, you can build your typing speed test into a typing traine
             i. This was just manage the tracking the score and managing the "Turtle" 🐢
             ii. Thus, this is useless. 🙁
         
-        b. Again, "life," computer problems, etc.
+        b. Again, "life," computer problems, etc. ✔️
             i. Yes, my PC is virtually useless...thought I had it fixed and decided it was time to move on (without loosing data) 🙁
             ii. Yet, the coding most go on to decided to move back to my Raspberry Pi for development until my PC is fixed 🙁
             iii. First, I reconnected my Raspberry Pi to network and worked on getting the latest updates to it. ⬅️
-            iv. Second, confirmed everything workign with current code. 
+            iv. Second, confirmed everything workign with current code. 🤷🏽‍♀️
         
-        c. Regroup again.
+        c. Regroup again. ☹️
             i. Draw on paper how I want it to look. 🗒️
-            ii. Figure out how to make these distint areas
+            ii. Figure out how to make these distint areas 🤬
                 - Overall application window → win_app
                 - Statistics/Score window → win_stats
                 - Test content window → win_content
@@ -92,10 +92,46 @@ If you have more time, you can build your typing speed test into a typing traine
                     ~ Okay, that docuemntation sucks so started over with some prevous code 👎🏾
                     ~ Figured out that creating Frames was solution to sections 😁
                     ~ Test with statistics frame making it have the window be the "border" ✔️
-                    ~ Move the logic and formatting to the other frames
-                    ~ Don't forget to make the root window stretch to widegets
-                    ~ Also, don't forget to add the title to the root window
-                    ~ Before parking this, put buttons in the control frame
+                    ~ Move the logic and formatting to the other frames ❌
+                    ~ Don't forget to make the root window stretch to widegets ❌
+                    ~ Also, don't forget to add the title to the root window ❌
+                    ~ Before parking this, put buttons in the control frame ❌
+            
+
+
+        d. Getting Back ⬅️
+            i. Well, "life interrupted" and finally getting back into this. 🫀
+            ii. First, I ended up "rebuilding" my development desktop....
+                a. Wipped out and renstalled MacMini 🖥️
+                b. First, with OneDrive setup the 'Day 86' to 'Always Keep on This Device' 📁
+                c. While waiting for OneDrive, followed guidelines from Copilot to install via Homebrew (recommended for development)...🐍
+                    - installed at /opt/homebrew/bin/python3
+                    - confirmed version 3.14.3
+                d. Rebuilt virtual Python environment 😊
+                e. Looks like install did not have TKinter, and had to fix that.  😐
+                f. Shit this turned out to be a long "night", so decided to continue tomorrw. ☹️
+                g. Reconnect to GitHub
+                h. Intall VS Code
+                    - Find my old notes for extensions
+                    - Install the application
+                    - Make sure code looks good
+
+                    
+                 
+            iii. Second, regrouping from where I left off in January...
+                1. Draw on paper how I want it to look. - FIND PICTURE BEFORE...HOPEFULLY SCANNED. 
+                2. Figure out how to make these distint areas
+                    - Overall application window → win_app
+                    - Statistics/Score window → win_stats
+                    - Test content window → win_content
+                    - Feedback (what user is doing) window → win_feedback
+
+                3. Yes, tried to do this without AI 
+                    - Test with statistics frame making it have the window be the "border" - SHOULD BE DONE, BUT RUN CODE FOR WHAT HAPPENS 
+                    - Move the logic and formatting to the other frames
+                    - Don't forget to make the root window stretch to widgets
+                    - Also, don't forget to add the title to the root window
+                    - Before parking this, put buttons in the control frame
                         1. Start
                         2. Stop
                         3. Reset
