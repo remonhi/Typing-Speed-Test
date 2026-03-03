@@ -136,7 +136,7 @@ If you have more time, you can build your typing speed test into a typing traine
                  
             iii. Second, regrouping from where I left off in January...
                 1. Draw on paper how I want it to look. - Did not have picture, but have the app working. ✔️
-                2. Figure out how to make these distint areas
+                2. Refresh on how these sections are configured (and named)
                     - Overall application window → win_app
                     - Statistics/Score window → win_stats
                     - Test content window → win_content
