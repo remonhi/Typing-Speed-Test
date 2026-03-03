@@ -110,16 +110,32 @@ If you have more time, you can build your typing speed test into a typing traine
                 d. Rebuilt virtual Python environment 😊
                 e. Looks like install did not have TKinter, and had to fix that.  😐
                 f. Shit this turned out to be a long "night", so decided to continue tomorrw. ☹️
-                g. Reconnect to GitHub
-                h. Intall VS Code
+                g. Reconnect to GitHub 😃
+                h. Intall VS Code 😃
                     - Find my old notes for extensions
+
+                        · autoDocstring - Python Docstring Generator
+                        · autopep8
+                        · Better Comments
+                        · GitHub Copilot Chat
+                        · GitHub Copilot
+                        · Inline Python Package Installer
+                        · Live Preview
+                        · Prettier - Code formatter
+                        · Prettify JSON
+                        · Pylance
+                        · Python Debugger
+                        · Python Environments
+                        · Python
+                        · REST Client
+                        · vscode-icons
+                                            
                     - Install the application
                     - Make sure code looks good
-
                     
                  
             iii. Second, regrouping from where I left off in January...
-                1. Draw on paper how I want it to look. - FIND PICTURE BEFORE...HOPEFULLY SCANNED. 
+                1. Draw on paper how I want it to look. - Did not have picture, but have the app working. ✔️
                 2. Figure out how to make these distint areas
                     - Overall application window → win_app
                     - Statistics/Score window → win_stats
