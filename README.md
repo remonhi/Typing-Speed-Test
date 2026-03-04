@@ -136,32 +136,37 @@ If you have more time, you can build your typing speed test into a typing traine
                  
             iii. Second, regrouping from where I left off in January...
                 1. Draw on paper how I want it to look. - Did not have picture, but have the app working. ✔️
-                2. Refresh on how these sections are configured (and named)
-                    - Overall application window → win_app
-                    - Statistics/Score window → win_stats
-                    - Test content window → win_content
-                    - Feedback (what user is doing) window → win_feedback
+                2. Refresh on how these sections are configured (and named) ✔️
+                    - Overall application window → root
+                    - Statistics/Score window → frm_stat
+                    - Test content window → frm_pasg
+                    - Feedback (what user is doing) window → frm_feed
+                    - Control pantel → frm_ctrl
 
-                3. Yes, tried to do this without AI 
-                    - Test with statistics frame making it have the window be the "border" - SHOULD BE DONE, BUT RUN CODE FOR WHAT HAPPENS 
-                    - Move the logic and formatting to the other frames
-                    - Don't forget to make the root window stretch to widgets
-                    - Also, don't forget to add the title to the root window
-                    - Before parking this, put buttons in the control frame
+                 3. Yes, tried to do this without AI 
+                    - Test with statistics frame making it have the window be the "border" ✔️
+                    - Move the logic and formatting to the other frames ✔️
+                    - Don't forget to make the root window stretch to widgets ✔️
+                    - Also, don't forget to add the title to the root window ✔️
+                    - Before parking this, put buttons in the control frame ✔️
                         1. Start
                         2. Stop
                         3. Reset
                         4. Exit
 
+                ...got this done with "help" searching internet. 
+
+    2. Just for sanity...
+        a. Display content (from API call) in passage frame
+        b. Experiment with reading from keyboard.
+            i. First, just reading the keybooard
+            ii.. Then, evaluate if any speed options (might be an Internet search)
+
     3. Make sure to address scoring based on the number of error (Corrected CPM).
         a. Instead of computer solution, search Internet to get equations for CPM, WPM and accuracy
         b. Then, stand back for the moment
 
-    2. Experiment with reading from keyboard.
-        a. First, just reading the keybooard
-        b. Then, evaluate if any speed options (might be an Internet search)
-
-    7. Reevaluate plans on how to...
+    4. Reevaluate plans on how to...
         a. Start the test.
         b. Analzye the test.
         c. Report back to test subject.

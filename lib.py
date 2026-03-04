@@ -5,9 +5,11 @@
 import os           # for OS commands to clear the screen
 import random       # for random number generation
 import time         # for time functions
+import re           # regular expressions 
 import turtle       # for turtle (the old Tcl/Tk) graphics
 import art          # for ASCII art
 import time         # for time funcdtions
+import requests     # API calls 
 from tkinter import Tk
 
 
@@ -186,4 +188,50 @@ def CenterWindowToDisplay(Screen: Tk, width: int, height: int):
     x = int((screen_width/2) - (width/2))
     y = int((screen_height/2) - (height/1.5))
     return f"{width}x{height}+{x}+{y}"
+
+
+
+
+
+#! Famous works...
+
+
+
+def passage():
+
+    famous_books = [
+        "Dracula",
+        "Frankenstein",
+        "Pride and Prejudice",
+        "A Tale of Two Cities",
+        "The Picture of Dorian Gray",
+        "The Adventures of Sherlock Holmes",
+        "Moby Dick",
+        "Treasure Island",
+        "Jane Eyre",
+        "Wuthering Heights",
+        "The Count of Monte Cristo",
+        "The Three Musketeers",
+        "Alice's Adventures in Wonderland",
+        "The Wonderful Wizard of Oz"
+    ]
+
+    random_book = random.choice(famous_books)                   # pick a random book from list 
+    url = f"https://gutendex.com/books/?search={random_book}"   # API for Gutenberg catalog with selected bok 
+    data = requests.get(url).json()                             # pull in the data from the API call 
+    id = data["results"][0]["id"]                               # determine ID of book 
+
+    url = f"https://www.gutenberg.org/files/{id}/{id}-0.txt"    # API for the entire text a book using book ID
+    text = requests.get(url).text                               # get the text
+
+    paragraphs = [                                              # stole this to break into paragraphs
+        p.strip()
+        for p in re.split(r"\n\s*\n", text)
+        if len(p.strip()) > 200
+    ]
+
+    random_paragraph = random.choice(paragraphs)                # picked a random paragraph
+    clean_text = re.sub(r"_([^_]+)_", r"\1", random_paragraph)  # in testing found underscores, so needed to remove them 
+
+    return clean_text                                           # finally sending it back 
 
