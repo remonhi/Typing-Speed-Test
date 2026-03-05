@@ -14,7 +14,7 @@ If you have more time, you can build your typing speed test into a typing traine
 
 ## My Notes
 
-1/18/26, Getting Organized
+1/18/26, Getting Organized ✅
 
     Copied over from previous project → cp -R 'Day 85' 'Day 86' ✔️
     Removed old virtual environment → rm -rf venv ✔️
@@ -64,7 +64,7 @@ If you have more time, you can build your typing speed test into a typing traine
         a. Had to stop in middle of all this to deal with a network issue.
         b. Then, made plans for next day.
 
-1/21/25-, Understanding Tkinter
+1/21/26-3/4/26, Understanding Tkinter ✅
 
     1. Setup the windows (game board)...
 
@@ -156,17 +156,45 @@ If you have more time, you can build your typing speed test into a typing traine
 
                 ...got this done with "help" searching internet. 
 
-    2. Just for sanity...
-        a. Display content (from API call) in passage frame
-        b. Experiment with reading from keyboard.
-            i. First, just reading the keybooard
-            ii.. Then, evaluate if any speed options (might be an Internet search)
+        2. Just for sanity...
+            a. Display content (from API call) in passage frame
+                i. First, could not find all my work
+                ii. Now, the famous time that OneDrive saved me.
+                iii. Cleaned it up and got to display.
 
-    3. Make sure to address scoring based on the number of error (Corrected CPM).
+
+3/5/26, No Time ✅
+    
+    1. Well, not much time today but just for shits wanted to make the 'quit' button work. 🤪
+        - Yeah, that was pretty easy.
+        - Then, used page https://www.plus2net.com/python/tkinter-colors.php?utm_source=copilot.com to play around with colors
+
+    2. Then, a little research on reading in from keyboard.
+        - Started with https://www.pythontutorial.net/tkinter/tkinter-event-binding/ that confused me more.
+        - Ended up getting some "help"
+        - It is ugly, but got the feedback frame working now.
+
+
+3/6/26, Comparing Text 
+
+    1. Figure how to how make this work...
+        a. Compare against the passage
+        b. Measure the rate 
+        c. Adjsut for errors
+        
+      
+    2. If time, cleaning up a bit
+
+
+ 
+ 
+     TBD. Make sure to address scoring based on the number of error (Corrected CPM).
         a. Instead of computer solution, search Internet to get equations for CPM, WPM and accuracy
         b. Then, stand back for the moment
 
-    4. Reevaluate plans on how to...
+
+
+    TBD. Reevaluate plans on how to...
         a. Start the test.
         b. Analzye the test.
         c. Report back to test subject.

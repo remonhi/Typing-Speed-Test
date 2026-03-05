@@ -22,6 +22,27 @@ APP_HEIGHT = 600
 OFFSETX = 100
 OFFSETY = 50
 
+
+def on_key(event):
+    key = event.char
+
+    # Handle special keys
+    if event.keysym == "BackSpace":
+        txt_feed.delete("end-2c", "end-1c")
+        return
+
+    if event.keysym in ("Shift_L", "Shift_R", "Control_L", "Control_R", "Alt_L", "Alt_R"):
+        return
+
+    # Append normal characters
+    if key:
+        txt_feed.insert("end", key)
+        txt_feed.see("end")
+
+
+
+
+
 #- Set up APIs
 
 #- Start with my CONVENTION of introductory information  
@@ -114,12 +135,22 @@ frm_feed.pack(
     pady=5, 
     ) 
 
+txt_feed = tk.Text(
+    frm_feed,
+    font=("Arial", 14),
+    bg="white",
+    height=2,
+    wrap="word"
+    )
+
+txt_feed.pack(fill="both", expand=True, padx=10, pady=10)
+
 
 #! Controls
 
 frm_ctrl = tk.Frame(
     root,
-    bg="lightgreen",
+    bg="#A9A9A9",
     height=100,
     bd=2,
     relief="solid"
@@ -133,7 +164,7 @@ style = ttk.Style()         # Style setup (macOS needs this to allow colors) & g
 style.theme_use("clam")     # enables custom colors on macOS
 style.configure(
     "Ctrl.TButton",
-    background="#2E8B57",   # sea green
+    background="#1e90ff", 
     foreground="white",
     font=("Arial", 14),
     padding=10
@@ -146,7 +177,12 @@ style.map(
 btn_start = ttk.Button(frm_ctrl, text="Start", style="Ctrl.TButton")
 btn_stop  = ttk.Button(frm_ctrl, text="Stop",  style="Ctrl.TButton")
 btn_reset = ttk.Button(frm_ctrl, text="Reset", style="Ctrl.TButton")
-btn_quit  = ttk.Button(frm_ctrl, text="Quit",  style="Ctrl.TButton")
+btn_quit  = ttk.Button(
+    frm_ctrl, 
+    text="Quit",  
+    style="Ctrl.TButton",
+    command=root.destroy
+    )
 
 btn_start.grid(row=0, column=0, padx=10, pady=20, sticky="nsew")
 btn_stop.grid(row=0, column=1, padx=10, pady=20, sticky="nsew")
@@ -172,6 +208,7 @@ for col in range(4):
 
 root.update_idletasks()
 root.geometry(f"{root.winfo_reqwidth()}x{root.winfo_reqheight()}")
+root.bind("<Key>", on_key)      # bind key events to the on_key function
 root.mainloop()                 # the loop to display and respond to events 
 
 
