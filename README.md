@@ -175,37 +175,51 @@ If you have more time, you can build your typing speed test into a typing traine
         - It is ugly, but got the feedback frame working now.
 
 
-3/6/26, Comparing Text 
+3/11/26, Comparing Text ✅
 
-    1. Figure how to how make this work...
-        a. Compare against the passage
-        b. Measure the rate 
-        c. Adjsut for errors
-        
-      
-    2. If time, cleaning up a bit
+    1. Figure how to how make this work... 🛏️
+        i. First, had to fix the doublging of text.
+        ii. Did some more research, and came up with approach.
+        iii. noting formulas for speed...
+
+            Gross WPM (GWPM): (Total Characters / 5) / Time in Minutes.
+            Net WPM (NWPM): (Gross WPM) - (Errors / Time in Minutes).
+
+            ...these simply came from internet searches.
+            
+    2. Doing the work (with some help)
+    
+        i. Started timer on first key
+            a. Setup variables to measure
+            b. Had to put the passage into a variable 
+            c. Then, worked on modyfing on_key() function to measure.
+            d. Thoughts and questions...
+                - How the index is used
+                - When does it stop measuring. 
+
+        ii. Analyzed the "raw" run and then addressed next steps.
 
 
- 
- 
-     TBD. Make sure to address scoring based on the number of error (Corrected CPM).
-        a. Instead of computer solution, search Internet to get equations for CPM, WPM and accuracy
-        b. Then, stand back for the moment
+3/12/26-, Owning It
 
-
-
-    TBD. Reevaluate plans on how to...
-        a. Start the test.
-        b. Analzye the test.
-        c. Report back to test subject.
-
+    1. Get rid of START & STOP buttons.
+    2. Use GWPM and NWPM instead
+    3. Put the results in the statistics frame 
+    4. Provide live statistics while typing
+    5. Make the reset button work.
+    6. Implement color-coded feedback (green/red)
+    7. Highlight passage as the user types (definitely required help)
+    8. Clean up the look and feel...
+        a. Colors
+        b. Sizing
+    9. Decide on max and minimum passage sizes (and pull another if necessary)
 
 
 
 TBD, Wraping Up
 
-    3. Clean up (and test) the code.
-
+    1. Do more testing.
+    
     2. Create a requirements.txt file
 
     3. Push to Git Hub
@@ -216,14 +230,15 @@ TBD, Wraping Up
         b. Note lesson learned
         c. Share code via Git Hub
 
-Whew, this lesson here was just is becoming evident with all these projects. First, I have to reserach to get familiar with topic. Most of these projects are not something new, but have established CONVENTIONS. Yet, the research can be a little overwhelming and in someways feels like slowing down process. In the end, the research allows for comining up with strategy. The initial startegy is a "what is computers did not exist" approach. Then, start to figure out how to make the computer do these things. Last, have to make it pretty. Second, I am still finding myself very curious about using Tkinter and thus find myself taking more time than necessary. At highlevel, my appraoch was...
+Whew, working with Tkinter is not one of my favorite projects; however, the real lessons here was about working with the “characters” of the passage to be evaluated and what was typed by the “end user.”  Beyond the intricates of the Tkinter library, first the real work is about researching the requirements. What is great is much data and information that is developed prior to computers being a tool.  For example, the measurement and the applicable formula for ‘Words Per Minute’ came before computers.   In the beginning the research seems like it is slowing down the development, but once development start it all makes sense.  Second, some testing if concepts required.  Last, can finally clean up and make the program usable.  Thus, these major steps have become my CONVENTIONS for development.  To outline, my approach was…
 
-1. Understand the requirements
-2. Look at examples.
-3. Reserach history of typing tests
-4. Decide on layout
-5. Refresh Tkinter knowledge
-6. Build out the "layout" with Tkinter windows, frames, and buttons
-7. Looked for equations to evaluate WPM, CPM and
+    1. Understand the requirements
+    2. Look at examples.
+    3. Research history of typing tests
+    4. Decide on layout (actually drew on paper)
+    5. Refresh Tkinter knowledge
+    6. Build out the "layout" with Tkinter windows, frames, and buttons
+    7. Looked for equations to evaluate WPM, CPM and
 
-...BTW, I tried very hard to avoid using an LMM and that meant quiclly scrolling down the page after a Google search. In many cases, the original documentation was horrible but found good exmamples. In the end, the joy was seeing an idea slowly come to life. You start off saying, "I don't know how to do that." Then, from brainstorming, experiment, and just "doing the work" it all comes together.
+...BTW, I tried very hard to avoid using an LMM and that meant quickly scrolling down the page after a Google search. In many cases, the original documentation was horrible but found good examples. Yes, I did use an LMM for some of the work; however, did not just have it write code and copy it over.  In the end, the joy was seeing an idea slowly come to life. You start off saying, "I don't know how to do that." Then, from brainstorming, experiment, and just "doing the work" it all comes together.
+

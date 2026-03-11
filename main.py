@@ -17,28 +17,76 @@ from tkinter import ttk         # Themed Tkinter widgets
 #- Define "global" variables and functions.
 
 title = "Typing Speed Test"
+
 APP_WIDTH = 600
 APP_HEIGHT = 600                    
 OFFSETX = 100
 OFFSETY = 50
 
+start_time = None
+elapsed_time = 0
+typed_chars = 0
+correct_chars = 0
+test_status = False
+passage_text = lib.passage()
+
 
 def on_key(event):
+    global start_time, elapsed_time, typed_chars, correct_chars, test_status
+
+    if test_status:
+        return
+
     key = event.char
 
-    # Handle special keys
-    if event.keysym == "BackSpace":
+    if start_time is None:                                                                      # start timer on first keystroke
+        start_time = time.time()
+  
+    if event.keysym == "BackSpace":                                                             # handle Backspace
+        if typed_chars > 0:
+            typed_chars -= 1
+        txt_feed.config(state="normal")
         txt_feed.delete("end-2c", "end-1c")
+        txt_feed.config(state="disabled")
         return
 
-    if event.keysym in ("Shift_L", "Shift_R", "Control_L", "Control_R", "Alt_L", "Alt_R"):
+    if event.keysym in ("Shift_L", "Shift_R", "Control_L", "Control_R", "Alt_L", "Alt_R"):      # ignore modifier keys
         return
 
-    # Append normal characters
-    if key:
+
+    if key:                                                                                     # normal characters
+        index = typed_chars                                                                     # index used to compare with passage 
+        typed_chars += 1
+
+        if index < len(passage_text) and key == passage_text[index]:                            # check correctness
+            correct_chars += 1
+
+        txt_feed.config(state="normal")                                                         # insert into feed
         txt_feed.insert("end", key)
+        txt_feed.config(state="disabled")
         txt_feed.see("end")
 
+        if typed_chars == len(passage_text):                                                    # end test if finished
+            test_status = True
+            end_test()
+
+
+def end_test():
+    global start_time, typed_chars, correct_chars
+
+    elapsed = time.time() - start_time
+    minutes = elapsed / 60
+
+    wpm = (typed_chars / 5) / minutes if minutes > 0 else 0.                                    # WPM calculation
+
+    accuracy = (correct_chars / typed_chars) * 100 if typed_chars > 0 else 0                    # Accuracy calculation
+
+    result = f"\nWPM: {wpm:.1f}    Accuracy: {accuracy:.1f}%\n"
+
+    txt_feed.config(state="normal")
+    txt_feed.insert("end", result)
+    txt_feed.config(state="disabled")
+    txt_feed.see("end")
 
 
 
@@ -107,7 +155,7 @@ frm_pasg.pack(
 
 lbl_pasg = tk.Label(
     frm_pasg,
-    text=lib.passage(),
+    text=passage_text,
     font=("Arial", 16),
     justify="left",
     bg="lightblue",
@@ -143,6 +191,8 @@ txt_feed = tk.Text(
     wrap="word"
     )
 
+txt_feed.configure(state="disabled")  # to stop the doubleing 
+
 txt_feed.pack(fill="both", expand=True, padx=10, pady=10)
 
 
@@ -169,6 +219,7 @@ style.configure(
     font=("Arial", 14),
     padding=10
     )
+
 style.map(
     "Ctrl.TButton",
     background=[("active", "#3CB371")]  # lighter green on hover
@@ -193,18 +244,7 @@ for col in range(4):
     frm_ctrl.grid_columnconfigure(col, weight=1)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+#! The main loop to display the window and respond to events
 
 root.update_idletasks()
 root.geometry(f"{root.winfo_reqwidth()}x{root.winfo_reqheight()}")
