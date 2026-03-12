@@ -5,6 +5,7 @@
 A Tkinter GUI desktop application that tests your typing speed.
 
 Using Tkinter and what you have learnt about building GUI applications with Python, build a desktop app that assesses your typing speed. Give the user some sample text and detect how many words they can type per minute.
+
 The average typing speed is 40 words per minute. But with practice, you can speed up to 100 words per minute.
 
 You can try out a web version here:
@@ -52,7 +53,7 @@ If you have more time, you can build your typing speed test into a typing traine
             - Data Entry/Transcription: 80-100+ WPM (high volume, high accuracy needed).
             - 911 Operator: 80-85 WPM (critical speed/accuracy).
 
-1/19/25, More Research 
+1/19/25, More Research ✅
 
     1. Come up with apporoach (using an API) for obtaining text for testing. ✅
         a. Okay, going with Gutenberg
@@ -60,13 +61,13 @@ If you have more time, you can build your typing speed test into a typing traine
         c. Clean up the "try" for the request
         d. Test it a little bit
 
-    2. Regrouped here. ✅
+    2. Regrouped here. 
         a. Had to stop in middle of all this to deal with a network issue.
         b. Then, made plans for next day.
 
 1/21/26-3/4/26, Understanding Tkinter ✅
 
-    1. Setup the windows (game board)...
+    1. Setup the windows (game board)...✅
 
         a. Go look at ScoreBoard for Snake game ✔️
             i. This was just manage the tracking the score and managing the "Turtle" 🐢
@@ -156,7 +157,7 @@ If you have more time, you can build your typing speed test into a typing traine
 
                 ...got this done with "help" searching internet. 
 
-        2. Just for sanity...
+        2. Just for sanity...✅
             a. Display content (from API call) in passage frame
                 i. First, could not find all my work
                 ii. Now, the famous time that OneDrive saved me.
@@ -169,7 +170,7 @@ If you have more time, you can build your typing speed test into a typing traine
         - Yeah, that was pretty easy.
         - Then, used page https://www.plus2net.com/python/tkinter-colors.php?utm_source=copilot.com to play around with colors
 
-    2. Then, a little research on reading in from keyboard.
+    2. Then, a little research on reading in from keyboard.✅
         - Started with https://www.pythontutorial.net/tkinter/tkinter-event-binding/ that confused me more.
         - Ended up getting some "help"
         - It is ugly, but got the feedback frame working now.
@@ -187,7 +188,7 @@ If you have more time, you can build your typing speed test into a typing traine
 
             ...these simply came from internet searches.
             
-    2. Doing the work (with some help)
+    2. Doing the work (with some help) ✅
     
         i. Started timer on first key
             a. Setup variables to measure
@@ -200,23 +201,26 @@ If you have more time, you can build your typing speed test into a typing traine
         ii. Analyzed the "raw" run and then addressed next steps.
 
 
-3/12/26-, Owning It
+3/12/26, Owning It ✅
 
-    1. Get rid of START & STOP buttons.
-    2. Use GWPM and NWPM instead
-    3. Put the results in the statistics frame 
-    4. Provide live statistics while typing
-    5. Make the reset button work.
-    6. Implement color-coded feedback (green/red)
-    7. Highlight passage as the user types (definitely required help)
-    8. Clean up the look and feel...
-        a. Colors
-        b. Sizing
-    9. Decide on max and minimum passage sizes (and pull another if necessary)
+    1. Get rid of START & STOP buttons. 🤖
+        a. First, tried this myself 
+        b. Well got rid of them, but kept screwing up on centering and had to get help
+    2. Use GWPM and NWPM instead 🤖
+        a. Got it cleaned up.
+        b. But looks weird, but learned this is used "during the test"
+    3. Put the results in the statistics frame 🤖
+    4. Provide live statistics while typing 🤖
+    5. Fixing issue with typing past the passage. 🤖
+    6. Decide on max and minimum passage sizes (and pull another if necessary) 🤖
+    7. Make the reset button work. 🤖
+    8. Highlight passage as the user types (definitely required help) ❌
+    9. Clean up the look and feel...😥
+        a. Shit a lot of "trying things" 
+        b. Getting some help
+        c. Oh, this was the most time consuming part...thus why I hate graphics programming
 
-
-
-TBD, Wraping Up
+3/13/26, Wraping Up
 
     1. Do more testing.
     
@@ -238,7 +242,8 @@ Whew, working with Tkinter is not one of my favorite projects; however, the real
     4. Decide on layout (actually drew on paper)
     5. Refresh Tkinter knowledge
     6. Build out the "layout" with Tkinter windows, frames, and buttons
-    7. Looked for equations to evaluate WPM, CPM and
+    7. Looked for equations to evaluate WPM and CPM
+    8. Decided to use an API to pull passages (and also keep them from being too large)
 
-...BTW, I tried very hard to avoid using an LMM and that meant quickly scrolling down the page after a Google search. In many cases, the original documentation was horrible but found good examples. Yes, I did use an LMM for some of the work; however, did not just have it write code and copy it over.  In the end, the joy was seeing an idea slowly come to life. You start off saying, "I don't know how to do that." Then, from brainstorming, experiment, and just "doing the work" it all comes together.
+...BTW, I tried very hard to avoid using an LMM and that meant quickly scrolling down the page after a Google search. In many cases, the original documentation was horrible but found good examples. Yes, I did use an LMM for some of the work; however, did not just have it write code and copy it over.  In the end, the joy was seeing an idea slowly come to life. You start off saying, "I don't know how to do that." Then, from brainstorming, experiment, and just "doing the work" it all comes together.  Again, I hate doing GUI work; however, it is good to have this one in my back pocket.  In the end, I could have done more with this one; however, this exercise was mostly for training and building out my toolbelt.  I have 5 more GUI related project in queue to build my skills.  
 
