@@ -231,20 +231,18 @@ If you have more time, you can build your typing speed test into a typing traine
     
 3/20/26-, Rolling Back
 
-    1. Round 2 Testing
+    1. Round 2 Testing 🕺🏽
         a. Check out code from GitHub (just the main.py). ✔️
         b. Setup a CLAUDE account (if it is considered the best for coding). ❌
         c. With a lot of troubleshooting and help, go the math error fixed. ✔️
         d. Cleaned up the formattitng of the stats frame...without help. ✔️
         e. Reset button...was not resetting errors, so fixed in reset_test(). 🙂
         f. Quit button...all good. 😊 
-        g. Re-enable the API. 
+        g. Re-enable the API. ✔️
 
+    2. Create a requirements.txt file → pip freeze > requirements.txt ✔️
 
-
-    2. Create a requirements.txt file
-
-    3. Push to Git Hub
+    3. Push to Git Hub ✔️
 
     4. Post assignment.
 
@@ -252,16 +250,5 @@ If you have more time, you can build your typing speed test into a typing traine
         b. Note lesson learned
         c. Share code via Git Hub
 
-Whew, working with Tkinter is not one of my favorite projects; however, the real lessons here was about working with the “characters” of the passage to be evaluated and what was typed by the “end user.”  Beyond the intricates of the Tkinter library, first the real work is about researching the requirements. What is great is much data and information that is developed prior to computers being a tool.  For example, the measurement and the applicable formula for ‘Words Per Minute’ came before computers.   In the beginning the research seems like it is slowing down the development, but once development start it all makes sense.  Second, some testing if concepts required.  Last, can finally clean up and make the program usable.  Thus, these major steps have become my CONVENTIONS for development.  To outline, my approach was…
-
-    1. Understand the requirements
-    2. Look at examples.
-    3. Research history of typing tests
-    4. Decide on layout (actually drew on paper)
-    5. Refresh Tkinter knowledge
-    6. Build out the "layout" with Tkinter windows, frames, and buttons
-    7. Looked for equations to evaluate WPM and CPM
-    8. Decided to use an API to pull passages (and also keep them from being too large)
-
-...BTW, I tried very hard to avoid using an LMM and that meant quickly scrolling down the page after a Google search. In many cases, the original documentation was horrible but found good examples. Yes, I did use an LMM for some of the work; however, did not just have it write code and copy it over.  In the end, the joy was seeing an idea slowly come to life. You start off saying, "I don't know how to do that." Then, from brainstorming, experiment, and just "doing the work" it all comes together.  Again, I hate doing GUI work; however, it is good to have this one in my back pocket.  In the end, I could have done more with this one; however, this exercise was mostly for training and building out my toolbelt.  I have 5 more GUI related project in queue to build my skills.  
+ 
 
