@@ -32,6 +32,7 @@ elapsed_time = 0
 typed_chars = 0
 correct_chars = 0
 test_status = False
+errors = 0
 
 font_title = ("Segoe UI", 16, "bold")
 font_body  = ("Segoe UI", 12)
@@ -40,76 +41,108 @@ font_stat  = ("Segoe UI", 14, "bold")
 
 
 def on_key(event):
-    global start_time, elapsed_time, typed_chars, correct_chars, test_status
+    global start_time, typed_chars, correct_chars, errors, test_status
 
+    # Stop if test is finished
     if test_status:
-        return
-    
-    if typed_chars >= len(passage_text):                                                        # prevent typing beyond passage length
         return
 
     key = event.char
 
-    if start_time is None:                                                                      # start timer on first keystroke
+    # Start timer on first keystroke
+    if start_time is None:
         start_time = time.time()
-  
-    if event.keysym == "BackSpace":                                                             # handle backspace
-        if typed_chars > 0:
-            typed_chars -= 1
+
+    # BACKSPACE
+    if event.keysym == "BackSpace":
         txt_feed.config(state="normal")
         txt_feed.delete("end-2c", "end-1c")
         txt_feed.config(state="disabled")
-        update_live_stats()   
+
+        if typed_chars > 0:
+            typed_chars -= 1
+
+        update_live_stats()
         return
 
-
-    if event.keysym in ("Shift_L", "Shift_R", "Control_L", "Control_R", "Alt_L", "Alt_R"):      # ignore modifier keys
+    # IGNORE MODIFIER KEYS
+    if event.keysym in ("Shift_L", "Shift_R", "Control_L", "Control_R", "Alt_L", "Alt_R"):
         return
 
+    # NORMAL CHARACTER
+    if key:
+        typed_chars += 1  # Count EVERY keystroke
 
-    if key:                                                                                     # normal characters
-        index = typed_chars                                                                     # index used to compare with passage 
-        typed_chars += 1
+        index = correct_chars  # Where we are in the passage
 
-        if index < len(passage_text) and key == passage_text[index]:                            # check correctness
-            correct_chars += 1
+        if index < len(passage_text):
+            expected = passage_text[index]
 
-        txt_feed.config(state="normal")                                                         # insert into feed
-        txt_feed.insert("end", key)
-        txt_feed.config(state="disabled")
-        txt_feed.see("end")
+            if key == expected:
+                # CORRECT KEY
+                correct_chars += 1
+
+                txt_feed.config(state="normal")
+                txt_feed.insert("end", key, "correct")
+                txt_feed.tag_config("correct", foreground="black")
+                txt_feed.config(state="disabled")
+                txt_feed.see("end")
+
+            else:
+                # WRONG KEY
+                errors += 1
+
+                txt_feed.config(state="normal")
+                txt_feed.insert("end", key, "wrong")
+                txt_feed.tag_config("wrong", foreground="red")
+                txt_feed.config(state="disabled")
+                txt_feed.see("end")
 
         update_live_stats()
 
-        if typed_chars >= len(passage_text):                                                    # end test if finished
+        # End test when all correct characters have been typed
+        if correct_chars >= len(passage_text):
             test_status = True
             end_test()
             return
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 def update_live_stats():
+
+    global errors
+    
     if start_time is None:
         return
 
     elapsed = time.time() - start_time
     minutes = elapsed / 60 if elapsed > 0 else 1e-9
 
-    errors = typed_chars - correct_chars
-
     gwpm = (typed_chars / 5) / minutes
-    nwpm = gwpm - (errors / minutes)
-    nwpm = max(nwpm, 0)
+
 
     accuracy = (correct_chars / typed_chars) * 100 if typed_chars > 0 else 0
 
     lbl_gwpm.config(text=f"GWPM: {gwpm:.1f}")
-    lbl_nwpm.config(text=f"NWPM: {nwpm:.1f}")
     lbl_acc.config(text=f"Accuracy: {accuracy:.1f}%")
     lbl_err.config(text=f"Errors: {errors}")
 
 
 def end_test():
-    global start_time, typed_chars, correct_chars
+
+    global start_time, typed_chars, correct_chars, errors
 
     elapsed = time.time() - start_time
     minutes = elapsed / 60
@@ -118,25 +151,14 @@ def end_test():
 
     accuracy = (correct_chars / typed_chars) * 100 if typed_chars > 0 else 0                    # Accuracy calculation
 
-    errors = typed_chars - correct_chars                                                        # Error count
-
     gwpm = (correct_chars / 5) / minutes if minutes > 0 else 0                                  # Gross WPM calculation
-
-    nwpm = gwpm - (errors / minutes) if minutes > 0 else 0                                      # Net WPM calculation
 
   # Update statistics frame
 
 
     lbl_gwpm.config(text=f"GWPM: {gwpm:.1f}")
-    lbl_nwpm.config(text=f"NWPM: {nwpm:.1f}")
     lbl_acc.config(text=f"Accuracy: {accuracy:.1f}%")
     lbl_err.config(text=f"Errors: {errors}")
-
-
-
-
-
-
 
 def get_valid_passage():
     min_len = 150
@@ -149,9 +171,8 @@ def get_valid_passage():
     
     return "Error: Could not fetch a passage of acceptable length."
 
-
 def reset_test():
-    global start_time, elapsed_time, typed_chars, correct_chars, test_status, passage_text
+    global start_time, elapsed_time, typed_chars, correct_chars, test_status, passage_text, errors
 
     # Reset state
     start_time = None
@@ -159,6 +180,8 @@ def reset_test():
     typed_chars = 0
     correct_chars = 0
     test_status = False
+    errors = 0
+
 
     # Fetch a new passage
     passage_text = get_valid_passage()
@@ -174,12 +197,8 @@ def reset_test():
 
     # Reset statistics labels
     lbl_gwpm.config(text="GWPM: 0")
-    lbl_nwpm.config(text="NWPM: 0")
     lbl_acc.config(text="Accuracy: 0%")
     lbl_err.config(text="Errors: 0")
-
-
-
 
 #- Set up APIs
 
@@ -233,7 +252,6 @@ font_stat = ("Segoe UI", 14, "bold")
 
 # --- CREATE LABELS ---
 lbl_gwpm = tk.Label(frm_stat, text="GWPM: 0", font=font_stat, bg="#F0F2F5", fg="#111827")
-lbl_nwpm = tk.Label(frm_stat, text="NWPM: 0", font=font_stat, bg="#F0F2F5", fg="#111827")
 lbl_acc  = tk.Label(frm_stat, text="Accuracy: 0%", font=font_stat, bg="#F0F2F5", fg="#111827")
 lbl_err  = tk.Label(frm_stat, text="Errors: 0", font=font_stat, bg="#F0F2F5", fg="#111827")
 
@@ -241,12 +259,10 @@ lbl_err  = tk.Label(frm_stat, text="Errors: 0", font=font_stat, bg="#F0F2F5", fg
 frm_stat.grid_columnconfigure(0, weight=1)
 frm_stat.grid_columnconfigure(1, weight=1)
 frm_stat.grid_columnconfigure(2, weight=1)
-frm_stat.grid_columnconfigure(3, weight=1)
 
 lbl_gwpm.grid(row=0, column=0, padx=10, pady=20, sticky="n")
-lbl_nwpm.grid(row=0, column=1, padx=10, pady=20, sticky="n")
-lbl_acc.grid(row=0, column=2, padx=10, pady=20, sticky="n")
-lbl_err.grid(row=0, column=3, padx=10, pady=20, sticky="n")
+lbl_acc.grid(row=0, column=1, padx=10, pady=20, sticky="n")
+lbl_err.grid(row=0, column=2, padx=10, pady=20, sticky="n")
 
 
 #! Passage 
@@ -304,6 +320,9 @@ txt_feed = tk.Text(
     pady=10,
     relief="flat"
 )
+
+txt_feed.config(state="disabled")
+
 
 root.update_idletasks()   # force Tkinter to calculate real sizes
 

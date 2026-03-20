@@ -220,10 +220,28 @@ If you have more time, you can build your typing speed test into a typing traine
         b. Getting some help
         c. Oh, this was the most time consuming part...thus why I hate graphics programming
 
-3/13/26, Wraping Up
+3/13/26, Math Fail ✅
 
-    1. Do more testing.
+    1. Do more testing.🤪
+        a. The math for error count was off - With a lot of help and troublehsooting, got it working. 
+        b. Then, I think reached my limited with API to put in a tempoary passage
+        c. Shit, made a freaking mess so not even checking in teh codd
+
+    2. Hmmmm ❌
     
+3/20/26-, Rolling Back
+
+    1. Round 2 Testing
+        a. Check out code from GitHub (just the main.py). ✔️
+        b. Setup a CLAUDE account (if it is considered the best for coding). ❌
+        c. With a lot of troubleshooting and help, go the math error fixed. ✔️
+        d. Cleaned up the formattitng of the stats frame...without help. ✔️
+        e. Reset button...was not resetting errors, so fixed in reset_test(). 🙂
+        f. Quit button...all good. 😊 
+        g. Re-enable the API. 
+
+
+
     2. Create a requirements.txt file
 
     3. Push to Git Hub

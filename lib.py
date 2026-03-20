@@ -199,6 +199,12 @@ def CenterWindowToDisplay(Screen: Tk, width: int, height: int):
 
 def passage():
 
+    #passage_text = "I questioned him more fully than I had ever done, with a view to making myself master of the facts of his hallucination. In my manner of doing it there was, I now see, something of cruelty. " 
+    #passage_clean = re.sub(r"_([^_]+)_", r"\1", passage_text)
+    #return passage_clean
+
+
+
     famous_books = [
         "Dracula",
         "Frankenstein",
